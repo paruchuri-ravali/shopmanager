@@ -7,7 +7,7 @@ import { createApp } from './app';
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:4173',
-  'https://your-frontend.vercel.app'
+  ...(process.env.CORS_ORIGIN?.split(',').map((origin) => origin.trim()).filter(Boolean) ?? [])
 ];
 
 const app = createApp(allowedOrigins);
