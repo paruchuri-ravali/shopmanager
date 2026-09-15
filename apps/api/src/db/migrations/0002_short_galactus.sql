@@ -1,0 +1,1 @@
+ALTER TABLE "sales" ADD COLUMN "payment_status" varchar(10) DEFAULT 'paid' NOT NULL;

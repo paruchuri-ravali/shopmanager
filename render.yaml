@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: shopmanager-api
+    runtime: node
+    region: singapore
+    rootDir: apps/api
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        value: https://your-app.vercel.app
+
